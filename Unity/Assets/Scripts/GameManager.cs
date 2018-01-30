@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public G.chapterType currentChapter;
 
+    public Transform cameraRig;
 
     public List<Condition> conditionList = new List<Condition>();
 
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
         //        headBall.FadeToBlack();
 
-        //        Invoke("QuickStart", 2f);
+//                Invoke("QuickStart", 2f);
 //        StartCoroutine(TitlesOpening());
 
         //        Invoke("Test", 3f);

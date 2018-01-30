@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3462900817d90c04cab9a4c3f9708ca8, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  vrType: 0
-  movementType: 1
+  vrType: 1
+  movementType: 0
   startMoveSpeed: 1
   haveRigPrefab: 0
   vrRig: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
