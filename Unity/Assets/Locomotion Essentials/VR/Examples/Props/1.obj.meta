@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: c350444d31ef1214b888869f4ef5c3de
+timeCreated: 1493861557
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ladder_builder_Cilindro2
+    100004: Ladder_builder_Cilindro_1
+    100006: Ladder_builder_Cilindro_22
+    100008: Ladder_builder_Cilindro_3
+    100010: Ladder_builder_Cilindro_4
+    100012: Ladder_builder_Cilindro_5
+    100014: Ladder_builder_Cilindro_6
+    100016: Ladder_builder_Cilindro_7
+    100018: Ladder_builder_Cilindro_8
+    100020: Ladder_builder_Nullo_1_Cilindro
+    100022: Ladder_builder_Nullo_1_Cilindro_11
+    100024: Ladder_builder_Nullo_1_Cilindro_2
+    100026: Ladder_builder_Nullo_Cilindro1
+    100028: Ladder_builder_Nullo_Cilindro_12
+    100030: Ladder_builder_Nullo_Cilindro_21
+    400000: //RootNode
+    400002: Ladder_builder_Cilindro2
+    400004: Ladder_builder_Cilindro_1
+    400006: Ladder_builder_Cilindro_22
+    400008: Ladder_builder_Cilindro_3
+    400010: Ladder_builder_Cilindro_4
+    400012: Ladder_builder_Cilindro_5
+    400014: Ladder_builder_Cilindro_6
+    400016: Ladder_builder_Cilindro_7
+    400018: Ladder_builder_Cilindro_8
+    400020: Ladder_builder_Nullo_1_Cilindro
+    400022: Ladder_builder_Nullo_1_Cilindro_11
+    400024: Ladder_builder_Nullo_1_Cilindro_2
+    400026: Ladder_builder_Nullo_Cilindro1
+    400028: Ladder_builder_Nullo_Cilindro_12
+    400030: Ladder_builder_Nullo_Cilindro_21
+    2300000: Ladder_builder_Cilindro2
+    2300002: Ladder_builder_Cilindro_1
+    2300004: Ladder_builder_Cilindro_22
+    2300006: Ladder_builder_Cilindro_3
+    2300008: Ladder_builder_Cilindro_4
+    2300010: Ladder_builder_Cilindro_5
+    2300012: Ladder_builder_Cilindro_6
+    2300014: Ladder_builder_Cilindro_7
+    2300016: Ladder_builder_Cilindro_8
+    2300018: Ladder_builder_Nullo_1_Cilindro
+    2300020: Ladder_builder_Nullo_1_Cilindro_11
+    2300022: Ladder_builder_Nullo_1_Cilindro_2
+    2300024: Ladder_builder_Nullo_Cilindro1
+    2300026: Ladder_builder_Nullo_Cilindro_12
+    2300028: Ladder_builder_Nullo_Cilindro_21
+    3300000: Ladder_builder_Cilindro2
+    3300002: Ladder_builder_Cilindro_1
+    3300004: Ladder_builder_Cilindro_22
+    3300006: Ladder_builder_Cilindro_3
+    3300008: Ladder_builder_Cilindro_4
+    3300010: Ladder_builder_Cilindro_5
+    3300012: Ladder_builder_Cilindro_6
+    3300014: Ladder_builder_Cilindro_7
+    3300016: Ladder_builder_Cilindro_8
+    3300018: Ladder_builder_Nullo_1_Cilindro
+    3300020: Ladder_builder_Nullo_1_Cilindro_11
+    3300022: Ladder_builder_Nullo_1_Cilindro_2
+    3300024: Ladder_builder_Nullo_Cilindro1
+    3300026: Ladder_builder_Nullo_Cilindro_12
+    3300028: Ladder_builder_Nullo_Cilindro_21
+    4300000: Ladder_builder_Cilindro2
+    4300002: Ladder_builder_Cilindro_1
+    4300004: Ladder_builder_Cilindro_22
+    4300006: Ladder_builder_Cilindro_3
+    4300008: Ladder_builder_Cilindro_4
+    4300010: Ladder_builder_Cilindro_5
+    4300012: Ladder_builder_Cilindro_6
+    4300014: Ladder_builder_Cilindro_7
+    4300016: Ladder_builder_Cilindro_8
+    4300018: Ladder_builder_Nullo_1_Cilindro
+    4300020: Ladder_builder_Nullo_1_Cilindro_11
+    4300022: Ladder_builder_Nullo_1_Cilindro_2
+    4300024: Ladder_builder_Nullo_Cilindro1
+    4300026: Ladder_builder_Nullo_Cilindro_12
+    4300028: Ladder_builder_Nullo_Cilindro_21
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
