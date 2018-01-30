@@ -180,7 +180,7 @@ namespace Loco.VR.Movement{
         /// </summary>
         private void UpdateBobStates() {
 			bobSpeed = (headVelocity.y < 0) ? (headVelocity.y * -1) * bobSpeedMultiplier : (headVelocity.y) * bobSpeedMultiplier;
-			Debug.Log(bobSpeed);
+//			Debug.Log(bobSpeed);
             switch (m_bobState) {
 				case BobState.BOBBING:  
 					if(m_agent != null) {
