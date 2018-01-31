@@ -70,12 +70,14 @@ public class GameManager : MonoBehaviour {
             chapterObjectList.Add(cc);
         }
 
+//        StartCoroutine(TeleportTest());
+
         //        headBall.FadeToBlack();
 
 //                Invoke("QuickStart", 2f);
 //        StartCoroutine(TitlesOpening());
 
-        //        Invoke("Test", 3f);
+//                Invoke("Test", 3f);
 
         //        Invoke("Fade", 6f);
 
@@ -88,6 +90,54 @@ public class GameManager : MonoBehaviour {
 
     }
 
+
+    IEnumerator TeleportTest()
+    {
+/*
+        yield return new WaitForSeconds(1);
+        MollonkaStart.position = new Vector3(0f, 6f, 10f);
+        MollonkaStart.Rotate(new Vector3(0f, 90f, 0f));
+        TeleportBrute(MollonkaStart);
+
+        yield return new WaitForSeconds(1);
+        MollonkaStart.position = new Vector3(10f, 6f, 10f);
+        MollonkaStart.Rotate(new Vector3(0f, 90f, 0f));
+        TeleportBrute(MollonkaStart);
+*/
+
+
+        
+                yield return new WaitForSeconds(4);
+                TeleportBrute(MollonkaStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(DeathStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(FatherStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(MollonkaStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(DeathStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(FatherStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(MollonkaStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(DeathStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(FatherStart);
+
+                yield return new WaitForSeconds(4);
+                TeleportBrute(MollonkaStart);
+        
+    }
 
     void QuickStart()
     {
@@ -298,20 +348,18 @@ public class GameManager : MonoBehaviour {
     void TeleportBrute(Transform destination)
     {
 
-        Vector3 offset = new Vector3(playspace.localPosition.x * -1f, playspace.localPosition.y, playspace.localPosition.z * -1f);
+        Vector3 offset = new Vector3(headset.localPosition.x * -1f, headset.localPosition.y, headset.localPosition.z * -1f);
 
         // move the playspace to where the player is (only if this isn't the simulator)
         if (headset != null)
         {
-            Debug.Log("headset detected");
             playspace.Translate(headset.localPosition);
         }
 
-        //        Debug.Log("localpos: "+headset.localPosition);
 
-        // rotate to the new desired rotation
-        float newRot = destination.eulerAngles.y - playspace.localEulerAngles.y;
-//        playspace.eulerAngles = Vector3.zero;
+        // this works to rotate to the target position and compensates for the headset rotation
+        float newRot = destination.localEulerAngles.y - headset.localEulerAngles.y;
+        playspace.eulerAngles = Vector3.zero;     // this seems to work to set  the rotation to zero
         playspace.Rotate(0f, newRot, 0f);
 
 
@@ -321,7 +369,6 @@ public class GameManager : MonoBehaviour {
         // move the playspace the opposite of the first move to fix the player's location
         if (headset != null)
         {
-            Debug.Log("headset detected");
             playspace.Translate(offset);
         }
 
@@ -424,29 +471,5 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /*
-        public void CompleteCondition(string conditionName)
-        {
-            if (conditionName == "") conditionName = "none";
-            Debug.Log("completing condition: " + conditionName);
-
-            foreach (Chapter chapter in chapterList)
-            {
-                foreach (Condition condition in chapter.conditions)
-                {
-                    if (condition.name == conditionName)
-                    {
-                        condition.complete = true;
-                    }
-                }
-            }
-        }
-    */
-    /*
-        public string GetCurrentChapter()
-        {
-            return currentChapter;
-        }
-    */
 
 }
