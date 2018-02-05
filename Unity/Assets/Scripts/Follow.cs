@@ -9,27 +9,33 @@ public class Follow : MonoBehaviour {
 
     public followTypeType followType;
 
+    private Transform headset;
+
 	// Use this for initialization
 	void Start () {
+
+
+        headset = FindObjectOfType<HeadsetGrabber>().transform;
 		
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
 
         try
         {
-///            Vector3 headRot = VRTK.VRTK_DeviceFinder.HeadsetTransform().localEulerAngles;
+            ///            Vector3 headRot = VRTK.VRTK_DeviceFinder.HeadsetTransform().localEulerAngles;
 
-///            transform.position = VRTK.VRTK_DeviceFinder.HeadsetTransform().position;
+            transform.position = headset.position;
 
             if (followType == followTypeType.Yonly)
             {
-///                transform.localEulerAngles = new Vector3(0f, headRot.y, 0f);
+                transform.localEulerAngles = new Vector3(0f, headset.localEulerAngles.y, 0f);
             }
             else if (followType == followTypeType.allRotation)
             {
-///                transform.rotation = VRTK.VRTK_DeviceFinder.HeadsetTransform().rotation;
+                transform.rotation = headset.rotation;
             }
 
 

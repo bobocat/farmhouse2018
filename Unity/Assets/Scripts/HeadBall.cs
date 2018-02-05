@@ -12,6 +12,8 @@ public class HeadBall : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
+        SetToClear();
+
 	}
 
     public void SetToBlack()

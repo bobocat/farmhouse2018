@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour {
     private float sceneScaleDeath = 1.4f;
     private float sceneScaleFather = 1f;
 
-    private HeadBall headBall;              // the black sphere over the player's head that we use for fades. This allows us to have text overlays inside it.
-
     private Transform playspace;
     private Transform headset;
 
@@ -49,8 +47,6 @@ public class GameManager : MonoBehaviour {
     private void Awake()
     {
 //        UpdateChapter();
-
-        headBall = GameObject.FindObjectOfType<HeadBall>();
 
     }
 
@@ -70,10 +66,6 @@ public class GameManager : MonoBehaviour {
             chapterObjectList.Add(cc);
         }
 
-//        StartCoroutine(TeleportTest());
-
-        //        headBall.FadeToBlack();
-
 //                Invoke("QuickStart", 2f);
 //        StartCoroutine(TitlesOpening());
 
@@ -90,54 +82,6 @@ public class GameManager : MonoBehaviour {
 
     }
 
-
-    IEnumerator TeleportTest()
-    {
-/*
-        yield return new WaitForSeconds(1);
-        MollonkaStart.position = new Vector3(0f, 6f, 10f);
-        MollonkaStart.Rotate(new Vector3(0f, 90f, 0f));
-        TeleportBrute(MollonkaStart);
-
-        yield return new WaitForSeconds(1);
-        MollonkaStart.position = new Vector3(10f, 6f, 10f);
-        MollonkaStart.Rotate(new Vector3(0f, 90f, 0f));
-        TeleportBrute(MollonkaStart);
-*/
-
-
-        
-                yield return new WaitForSeconds(4);
-                TeleportBrute(MollonkaStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(DeathStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(FatherStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(MollonkaStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(DeathStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(FatherStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(MollonkaStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(DeathStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(FatherStart);
-
-                yield return new WaitForSeconds(4);
-                TeleportBrute(MollonkaStart);
-        
-    }
 
     void QuickStart()
     {
@@ -240,51 +184,23 @@ public class GameManager : MonoBehaviour {
     IEnumerator TitlesOpening()
     {
 
-
         startGameGroup.gameObject.SetActive(false);
-
-//        Debug.Log("title 1");
-//        yield return new WaitForSeconds(1);
-
-        //        TeleportBrute(theVoid);
-
-//        startGameGroup.gameObject.SetActive(true);
-
-        //        headBall.SetToBlack();
 
         yield return new WaitForSeconds(1);
 
-
-        // start with a black screen
-        //GetComponent<VRTK_HeadsetFade>().Fade(Color.black, 0f);
-
-        //        yield return new WaitForSeconds(3);
-
         PlayTitle("Mollonka");
-        //titleAnimator.Play("title_mollonka");
 
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(8);     // wait while the title is playing
 
-//        GetComponent<VRTK_HeadsetFade>().Fade(Color.black, 0f);
+        SteamVR_Fade.Start(Color.black, 0f);    // fade the headset to black
 
-        //        TeleportFast(MollonkaStart);
-        TeleportBrute(MollonkaStart);
+        yield return new WaitForSeconds(1);     // wait while the title is playing
+
+        TeleportBrute(MollonkaStart);           // go to the start position in the room
+
+        SteamVR_Fade.Start(Color.clear, 4f);    // fade the headset to clear
 
         SetChapter(G.chapterType.mollonka);
-
-        //        headBall.SetToClear();
-
-        //        GetComponent<VRTK_HeadsetFade>().Unfade(3f);
-
-        //        GetComponent<VRTK_HeadsetFade>().Unfade(3f);
-
-
-        //        yield return new WaitForSeconds(3f);
-        //        TeleportBrute(DeathStart);
-
-        //        yield return new WaitForSeconds(3f);
-        //        TeleportBrute(FatherStart);
-
 
     }
 
