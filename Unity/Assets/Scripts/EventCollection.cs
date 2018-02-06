@@ -23,8 +23,10 @@ public class EventCollection : MonoBehaviour{
         gameManager = FindObjectOfType<GameManager>();
 
         audioSource = GetComponent<AudioSource>();
-        anim = GetComponent<Animator>();
-
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
     }
 
     // reset all the complete triggers
@@ -70,10 +72,21 @@ public class EventCollection : MonoBehaviour{
                     textBubble.ShowMessage(eventGroup.textMessage.text, eventGroup.textMessage.delay);
                 }
 
+                if (eventGroup.sound != null)
+                {
+                    audioSource.clip = eventGroup.sound;
+                    audioSource.Play();
+                }
+
+                if (eventGroup.animState != null & anim != null)
+                {
+                    anim.Play(eventGroup.animState);
+                }
+
                 // mark the event as complete
                 eventGroup.complete = true;
 
-                Debug.Log("event collection event complete");
+//                Debug.Log("event collection event complete");
 
                 // update the condition in the gameManager
                 gameManager.CompleteCondition(eventGroup.gmCondition);

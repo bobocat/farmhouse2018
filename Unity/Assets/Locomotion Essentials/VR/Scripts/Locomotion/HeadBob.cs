@@ -164,7 +164,7 @@ namespace Loco.VR.Movement{
 
 				if(m_moveForwardUp || m_moveForwardDown) {                                                                                              // if this occurs, reset the timer, reset up&forward bools
                     OnBobDetected();
-                    Debug.Log("Bob");
+//                    Debug.Log("Bob");
 				}
 			}
         }

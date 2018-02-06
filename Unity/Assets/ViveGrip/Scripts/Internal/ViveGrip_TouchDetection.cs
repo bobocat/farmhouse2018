@@ -4,14 +4,25 @@ using System.Collections.Generic;
 public class ViveGrip_TouchDetection : MonoBehaviour {
   private List<ViveGrip_Object> collidingObjects = new List<ViveGrip_Object>();
 
+    public Sensor sensor;       // send a message to the sensor if it is available
+
+
   void Start () {
-    GetComponent<SphereCollider>().isTrigger = true;
-  }
+        //    GetComponent<SphereCollider>().isTrigger = true;
+        GetComponent<Collider>().isTrigger = true;
+
+        if (GetComponent<Sensor>()) { sensor = GetComponent<Sensor>(); }
+    }
 
   void OnTriggerEnter(Collider other) {
     ViveGrip_Object component = ActiveComponent(other.gameObject);
     if (component == null) { return; }
     collidingObjects.Add(component);
+
+        if (sensor != null)
+        {
+            sensor.OnTouched();
+        }
   }
 
   void OnTriggerExit(Collider other) {

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public static class G {
 
-    public enum chapterType { tutorial, mollonka, visions, death, father, wedding};
+    public enum chapterType { tutorial, mollonka, visions, deathApproaches, death, father, wedding};
 
 }

@@ -7,6 +7,8 @@ using UnityEngine.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    public bool quickStart = true;
+
     public List<Chapter> chapterList = new List<Chapter>();
 
     public List<ChapterControl> chapterObjectList = new List<ChapterControl>();
@@ -66,7 +68,11 @@ public class GameManager : MonoBehaviour {
             chapterObjectList.Add(cc);
         }
 
-//                Invoke("QuickStart", 2f);
+        if (quickStart)
+        {
+            Invoke("QuickStart", 2f);
+        }
+
 //        StartCoroutine(TitlesOpening());
 
 //                Invoke("Test", 3f);
@@ -110,6 +116,8 @@ public class GameManager : MonoBehaviour {
     void CheckChapterAdvance()
     {
 
+        Debug.Log("checking chapter advance");
+
         if (currentChapter == G.chapterType.mollonka)
         {
             if (CheckCondition("FatherMessages") && CheckCondition("WeddingMessages"))
@@ -121,7 +129,13 @@ public class GameManager : MonoBehaviour {
         {
             if (CheckCondition("SawVision"))
             {
-                SetChapter(G.chapterType.death);
+                StartCoroutine(SawVisionSequence());
+            }
+        }
+        else if (currentChapter == G.chapterType.deathApproaches)
+        {
+            if (CheckCondition("LookedAtDeath"))
+            {
                 StartCoroutine(DeathOpening());
             }
         }
@@ -144,6 +158,16 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    IEnumerator SawVisionSequence()
+    {
+
+        // wait a bit before starting the next chapter
+        yield return new WaitForSeconds(5);
+
+        SetChapter(G.chapterType.deathApproaches);
+    }
+
+
     void SetChapter(G.chapterType newChapter)
     {
         foreach (ChapterControl cc in chapterObjectList)
@@ -159,6 +183,8 @@ public class GameManager : MonoBehaviour {
         }
 
         currentChapter = newChapter;
+
+        Debug.Log("setting chapter to " + currentChapter);
     }
 
     void GetCameraRefs()
@@ -211,12 +237,21 @@ public class GameManager : MonoBehaviour {
 
         yield return new WaitForSeconds(1);
 
+        SteamVR_Fade.Start(Color.black, 3f);    // fade the headset to black
+
+        yield return new WaitForSeconds(4);
+
+        TeleportBrute(theVoid);
 
         PlayTitle("Death");
 
         yield return new WaitForSeconds(8);
 
         TeleportBrute(DeathStart);
+
+        SteamVR_Fade.Start(Color.clear, 4f);    // fade the headset to clear
+
+        SetChapter(G.chapterType.death);
 
     }
 

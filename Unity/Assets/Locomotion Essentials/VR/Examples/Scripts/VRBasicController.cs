@@ -150,7 +150,7 @@ namespace Loco.VR.Input {
                 {
                     m_swipeDir = SwipeDirection.SWIP_DOWN;
                 }
-                Debug.Log(m_swipeDir);
+//                Debug.Log(m_swipeDir);
             }
         }
 		public bool isTouching() {if(m_deivce!=null) { return (m_deivce.GetAxis().x != 0 || m_deivce.GetAxis().y != 0); }else return false;}

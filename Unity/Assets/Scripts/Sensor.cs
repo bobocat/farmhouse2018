@@ -60,6 +60,28 @@ public class Sensor : MonoBehaviour {
 
     }
 
+    void ViveGripHighlightStart(ViveGrip_GripPoint gripPoint)
+    {
+        Debug.Log("ViveGripHighlightStart");
+        OnTouched();
+    }
+
+    void ViveGripInteractionStart(ViveGrip_GripPoint gripPoint)
+    {
+        Debug.Log("ViveGripInteractionStart");
+        OnClicked();
+    }
+
+    public void OnClicked()
+    {
+        clicked.Invoke();
+    }
+
+    public void OnTouched()
+    {
+        touched.Invoke();
+    }
+
     // this gets trigger by the laser that is attached to the player!
     public void OnLookedAt(float distanceToPlayer)
     {
